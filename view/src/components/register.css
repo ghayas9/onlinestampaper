@@ -1,0 +1,26 @@
+.registerRow{
+    height: 750px;
+    border: 1px solid black;
+    background: linear-gradient(to right, #509bdf , #0b2884 );
+}
+
+.registerForm{
+    position: absolute;
+    left: 530px;
+    top: 120px;
+    padding: 20px;
+    padding: 0px 10px 30px 10ps;
+    border: 7px solid blue;
+    background: white;
+    
+}
+/* It will be fix in the future */
+/* @media (min-width: 480px) {
+    .registerForm{
+        position: relative;
+        left:auto;
+        top: auto;
+        padding: auto;
+    }
+    
+} */

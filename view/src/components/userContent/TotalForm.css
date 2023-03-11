@@ -1,0 +1,21 @@
+/* .col-sm-4{
+    border :1px dotted black;
+    background-color: white;
+} */
+.totalFormRow{
+    background: linear-gradient(to right, #509bdf , #0b2884 );
+}
+.tfBtnDownload{
+   position: absolute;
+   left: 820px; 
+   width: 130px;
+   color: blue;
+   font-weight: 700; 
+}
+.tfBtnPrint{
+    position: absolute;
+    left: 980px; 
+    width: 130px;
+    color: blue;
+    font-weight: 700;
+}

@@ -1,0 +1,14 @@
+.loginRow{
+    height: 700px;
+    border: 1px solid black;
+    background: linear-gradient(to right, #509bdf , #0b2884 );
+}
+
+.middleform{
+    position: absolute;
+    left: 450px;
+    top: 120px;
+    padding: 20px;
+    padding: 0px 10px 30px 10ps;
+    border: 7px solid blue;
+}
