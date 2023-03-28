@@ -12,10 +12,18 @@ import Modal from 'react-bootstrap/Modal';
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
 
+   const userFilter = (data)=>{
+    setUsers(data.filter((e)=>{
+      if(!e.accepted)
+          return e
+    }))
+}
+   
    const Accept = (id) =>{
     axios.put('http://localhost:9000/api/admin/get/form/'+id)
     .then((res)=>{
      console.log(res)
+     getAll()
      NotificationManager.success(`Accepted Succesfully`,"Notification",3000)
     })
     .catch((error)=>{
@@ -23,12 +31,13 @@ import Modal from 'react-bootstrap/Modal';
      NotificationManager.error (`Some thing went wrong`,"Error",3000)
     })
     handleClose()
-    getAll()
+    
    }
    const Delete = (id) =>{
     axios.delete('http://localhost:9000/api/admin/get/form/'+id)
     .then((res)=>{
      console.log(res)
+     getAll()
      NotificationManager.success(`Deleted Succesfully`,"Notification",3000)
     })
     .catch((error)=>{
@@ -36,14 +45,13 @@ import Modal from 'react-bootstrap/Modal';
      NotificationManager.error (`Some thing went wrong`,"Error",3000)
     })
     handleClose()
-    getAll()
    }
    
    const getAll = ()=>{
     axios.get('http://localhost:9000/api/admin/get/form')
     .then((res)=>{
      console.log(res)
-      setUsers(res.data.data)
+     userFilter(res.data.data)
     })
     .catch((error)=>{
      console.log(error)
@@ -74,25 +82,25 @@ import Modal from 'react-bootstrap/Modal';
                 </tr>
               </thead>
               <tbody>
-                  {users? users.map((user,index)=>{
-                      if(!user.accepted){
-                        return <tr onClick={()=>{
-                          setseletcted(user)
-                          handleShow()
-                        }}>
+                  {users.length > 0? users.map((user,index)=>{
+                      // if(!user.accepted){
+                        return <tr >
                               <td>{user._id}</td>
                               <td>{user.user_name}</td>
                               <td>{user.contact}</td>
                               <td>{user.title}</td>
                               <td>
-                                {
-                                  user.accepted ? <button className='btn btn-success'>Verifyed</button>:
-                                  <button className='btn btn-danger'>unverifyed</button>
-                                }
+                               
+                                  <button className='btn btn-danger'onClick={()=>{
+                                      setseletcted(user)
+                                      handleShow()
+                                    }}>unverifyed
+                                  </button>
+                                
                               </td>
                         </tr>
-                      }
-                   } ):<p className='text-center fs-2 fw-bolder'>No user</p>}
+                      // }
+                   } ):<p className='text-center fs-2 fw-bolder'>Not Found</p>}
               </tbody>
             </table>
             </div>

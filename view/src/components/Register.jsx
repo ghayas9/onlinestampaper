@@ -36,6 +36,7 @@ const [password,setPassword] = useState();
               })
               .then((data)=>{
                 console.log(data)
+                Navigate('/login')
                 NotificationManager.success(`User ${firstName}   `,"Registered",3000)
               })
               .catch((err)=>{
