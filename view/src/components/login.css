@@ -1,0 +1,9 @@
+.loginRow{
+    border: 1px solid black;
+    background: linear-gradient(to right, #509bdf , #0b2884 );
+}
+
+.middleform{
+    padding: 20px 50px;
+    border: 1px solid rgb(17, 17, 17);
+}
