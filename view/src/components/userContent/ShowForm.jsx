@@ -81,6 +81,10 @@ const state = useSelector((state) => state.LogIn)
                           </div>
                     </div>
                     <h5 style={{borderBottom:'2px solid black'}}>Title  : {form.title}</h5>
+
+                    <div>
+                      <textarea style={{width:"100%"}} rows={5}  ></textarea>
+                    </div>
                     
               </div>
           </div>

@@ -59,7 +59,7 @@ const [password,setPassword] = useState();
                   placeholder="First Name"
                   name='firstName'
                   value={firstName}
-                  onChange={(e)=>{setFname(e.target.value)}}
+                  onChange={(e)=>{setFname(e.target.value.replace(/[^a-zA-Z' ']/g, ''))}}
                 />
               </div>
               <div className="d-lg-flex my-2">
@@ -71,7 +71,7 @@ const [password,setPassword] = useState();
                 placeholder="Last Name"
                 name='lastName'
                 value={lastName}
-                onChange={(e)=>{setLname(e.target.value)}}
+                onChange={(e)=>{setLname(e.target.value.replace(/[^a-zA-Z' ']/g, ''))}}
               />
               </div>
               <div className="d-lg-flex my-2">

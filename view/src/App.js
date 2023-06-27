@@ -9,6 +9,7 @@ import CreateForm from "./components/userContent/CreateForm";
 import TotalForm from "./components/userContent/TotalForm";
 import FeeSlip from "./components/userContent/FeeSlip";
 import ShowForm from "./components/userContent/ShowForm";
+
 // import ForgetPassword from "./components/ForgetPassword";
 // import UserList from "./components/adminContent/UserList";
 // import UserVerification from "./components/adminContent/UserVerification";
@@ -29,6 +30,8 @@ import LogInAdminPage from "./components/AdminPanel/LoginAdmin";
 //////////////GET REDUX//////////////
 import { useSelector } from 'react-redux';
 import GBar from "./components/GBar";
+import ForgetPassword from "./components/ForgetPassword";
+import ForgetandPassword from "./components/ForgetandPassword";
 ///////////////GET REDUX//////////////
 
 export default function App() {
@@ -56,6 +59,14 @@ export default function App() {
       path:"/",
       component:<Home/>
     },
+    {
+      path:"/forgot/password",
+      component:<ForgetPassword/>
+    },
+    {
+      path:"/forgot/password/:token",
+      component:<ForgetandPassword/>
+    }
    ]
   const userRoutes =  [
     {

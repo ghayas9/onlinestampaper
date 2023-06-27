@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const mongooseSerial = require("mongoose-serial")
+
 const Form = new mongoose.Schema({
     _id:mongoose.Types.ObjectId,
     uid:mongoose.Types.ObjectId,
@@ -24,9 +26,9 @@ const Form = new mongoose.Schema({
     },
     accepted:{
         type:Boolean,
-        default:false
+        default:true
     }
 },{timestamps:true})
 
-
+Form.plugin(mongooseSerial, { field:"serial_no"})
 module.exports = mongoose.model("Form",Form)

@@ -87,7 +87,7 @@ const Login = () => {
               <button className='col-6 btn btn-primary text-dark border-dark  rounded-2'>Login</button>
             </div>
             <div className='justify-content-between'>
-              <button onClick={()=>{Navigate('/forgetPassword')}} className=' btn btn-text fw-bold text-primary'>Forgot Password</button>
+              <button onClick={()=>{Navigate('/forgot/password')}} className=' btn btn-text fw-bold text-primary'>Forgot Password</button>
               <button onClick={()=>{Navigate('/register')}} className=' btn btn-text fw-bold text-primary'>Register</button>
             </div>
         </form>

@@ -5,7 +5,6 @@ const Form = require('../Models/Form')
 module.exports = {
     createForm:async(req,res)=>{
         const value = Joi.object({
-            serial_no: Joi.string().required(),
             user_name: Joi.string().required(),
             title: Joi.string().required(),
             licence_no: Joi.string().required(),

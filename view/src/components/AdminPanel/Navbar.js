@@ -50,9 +50,9 @@ import { useEffect } from 'react';
               <Nav.Link>
                   <Link class="nav-link  shadow text-primary fw-bold border border-primary rounded-3" to={'/user/request'}>User Request</Link>
               </Nav.Link>
-              <Nav.Link>
+              {/* <Nav.Link>
                   <Link class="nav-link shadow text-primary fw-bold border border-primary rounded-3" to={'/paper/request'}>Paper Request</Link>
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link>
               <button className='btn btn-danger' onClick={()=>{
                     action.LogOutAdmin()

@@ -40,7 +40,6 @@ const handleSubmit =(e)=>{
   },
   url:'http://localhost:9000/api/user/create/form',
   data:{
-    serial_no:serialNo,
     user_name: userName,
     title: title,
     licence_no: licenceNo,
@@ -64,7 +63,7 @@ return (<div className='container  border border-primary bg-light'>
   <div className='col-sm-12 col-lg' >
     <form  className=' form-horizontal'  style={{width:"60%"}}>
       <h3 className='h5 fw-bolder fs-5 text-lg-center text-primary'>ENTER CORRECT DATA INTO THE FORM</h3>
-      <div className="form-group d-lg-flex d-sm-block my-4">
+      {/* <div className="form-group d-lg-flex d-sm-block my-4">
         <label htmlFor="serialNo" className='col-4 h5 fw-bolder text-primary'>Serial No</label>
         <input 
         type="text"
@@ -73,14 +72,14 @@ return (<div className='container  border border-primary bg-light'>
         value={serialNo}
         onChange={(e)=>{setSerialNo(e.target.value)}}
         />
-      </div>
+      </div> */}
       <div class="form-group d-lg-flex d-sm-block my-4">
         <label htmlFor="userName" className='col-4 h5 fw-bolder text-primary'>User Name</label>
         <input type="text" 
         className="form-control border-2 border-primary shadow"
         id="userName"
         value={userName}
-        onChange={(e)=>{setUserName(e.target.value)}}
+        onChange={(e)=>{setUserName(e.target.value.replace(/[^a-zA-Z' ']/g, ''))}}
         />
       </div>
       <div class="form-group d-lg-flex d-sm-block my-4">
@@ -110,7 +109,7 @@ return (<div className='container  border border-primary bg-light'>
         className="form-control border-2 border-primary shadow" 
         id="customerName"
         value={customerName}
-        onChange={(e)=>{setCustomerName(e.target.value)}}
+        onChange={(e)=>{setCustomerName(e.target.value.replace(/[^a-zA-Z' ']/g, ''))}}
         />
       </div>
       <div className="form-group d-lg-flex d-sm-block my-4">
